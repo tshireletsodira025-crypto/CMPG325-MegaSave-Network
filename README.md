@@ -203,3 +203,109 @@ Department of Computer Science
 CMPG 325 – Computer Networks
 2026
 
+## Milestone 2 - Client Implementation Review
+
+### Client
+**MegaSave Wholesale & Retail (Klerksdorp)**  
+**Client ID:** CLI-016  
+**Industry:** Retail  
+**Addressing Block:** 10.16.0.0/16
+
+### Network Design
+
+The MegaSave network was implemented and simulated using Cisco Packet Tracer. The design uses an extended star topology, with switches providing central connectivity to end devices, servers and the wireless access point.
+
+The network includes:
+
+- Router R1
+- Switches S1, S2 and S3
+- Staff PCs
+- Administration PC
+- Servers
+- Wireless Access Point (AP1)
+- Contractor laptops
+
+The topology was designed to provide structured connectivity and allow the network to accommodate the expected 40% user growth over three years.
+
+### VLAN Implementation
+
+The network was divided into VLANs to separate different groups of users and services:
+
+| VLAN | Name | Purpose |
+|---|---|---|
+| 10 | Staff | Staff devices |
+| 20 | Management | Management devices |
+| 30 | Contractor | Contractor access |
+| 40 | Servers | Server devices |
+
+Trunk links were configured between the appropriate switches to carry the required VLAN traffic across the network.
+
+### Client Change Request - CR14
+
+The network accommodates the requirement that after-hours cleaning/security contractors require limited wireless access.
+
+An access point was configured and connected to the switching infrastructure. Contractor laptops connect wirelessly through the access point and receive addressing from the network.
+
+### Assigned Networking Challenge - Network Troubleshooting
+
+The assigned networking challenge was **Network Troubleshooting (fault isolation scenario)**.
+
+Troubleshooting involved verifying IP addressing, default gateways, DHCP operation, VLAN configuration, switch connectivity, trunk links and end-to-end communication.
+
+The network was tested after troubleshooting to confirm successful connectivity.
+
+### DHCP Verification
+
+DHCP operation was verified using the router DHCP binding table. The bindings showed addresses assigned to devices in the configured network ranges, including:
+
+- 10.16.1.2 – 10.16.1.11
+- 10.16.2.5
+- 10.16.2.7
+- 10.16.2.9
+- 10.16.2.34
+
+This provided evidence that DHCP was successfully assigning addresses to network clients.
+
+### Connectivity Testing
+
+End-to-end connectivity was tested using the `ping` command.
+
+Successful tests included communication between devices on different network segments and communication with the default gateway.
+
+For example, PC7 successfully tested connectivity to the gateway:
+
+```text
+ping 10.16.1.1
+
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
+```
+
+This confirms successful connectivity between the client device and its default gateway.
+
+### Evidence
+
+Milestone 2 evidence is included in this repository and contains screenshots showing:
+
+- Network topology
+- VLAN configuration
+- Trunk configuration
+- DHCP bindings
+- Connectivity testing
+- Troubleshooting evidence
+- Final project verification
+
+The final Cisco Packet Tracer implementation is also included in the repository.
+
+### Milestone 2 Submission
+
+The Milestone 2 submission includes:
+
+1. **Working Packet Tracer file** – final `.pkt` implementation
+2. **Assigned feature implemented** – Network Troubleshooting / fault isolation
+3. **Testing evidence** – configuration and connectivity screenshots
+4. **Updated GitHub portfolio** – project documentation and evidence
+
+### Reflection
+
+The implementation provided practical experience in designing, configuring and troubleshooting a simulated enterprise network. The troubleshooting process required verification of addressing, VLANs, trunk links, DHCP and end-to-end connectivity. Testing was performed after configuration changes to confirm that the final network was operational.
+
